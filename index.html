@@ -1,0 +1,176 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BYD Car Showcase</title>
+  <style>
+    /* Basic resets and styling */
+    body, html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    
+    /* Header styling */
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+    }
+    
+    /* Section styling */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .car {
+      margin: 30px auto;
+      max-width: 800px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .car img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .car h2 {
+      margin-top: 20px;
+      font-size: 2em;
+      color: #333;
+    }
+    .car p {
+      color: #666;
+      font-size: 1.1em;
+    }
+    
+    /* Footer styling */
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-size: 1.5em;
+      border: 2px solid #ffcc00;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    footer a:hover {
+      background-color: #ffcc00;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Hero Section -->
+  <header>
+    <h1>BYD Car Showcase</h1>
+    <p>Discover the latest BYD cars with cutting-edge design and technology</p>
+  </header>
+
+  <!-- Car Section 1: BYD Atto 3 -->
+  <section id="car1">
+    <div class="car">
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/BYD_Atto_3.jpg/1200px-BYD_Atto_3.jpg" 
+        alt="BYD Atto 3" 
+      />
+      <h2>BYD Atto 3</h2>
+      <p>Experience the future with the BYD Atto 3 – a modern, efficient electric vehicle crafted with innovative AI technology.</p>
+    </div>
+  </section>
+
+  <!-- Car Section 2: BYD Han EV -->
+  <section id="car2">
+    <div class="car">
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/BYD_Han_EV_2020.jpg/1200px-BYD_Han_EV_2020.jpg" 
+        alt="BYD Han EV" 
+      />
+      <h2>BYD Han EV</h2>
+      <p>Discover elegance and power with the BYD Han EV – where advanced engineering meets AI-driven innovation.</p>
+    </div>
+  </section>
+
+  <!-- Car Section 3: BYD Tang EV -->
+  <section id="car3">
+    <div class="car">
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/BYD_Tang_EV_2019.jpg/1200px-BYD_Tang_EV_2019.jpg" 
+        alt="BYD Tang EV" 
+      />
+      <h2>BYD Tang EV</h2>
+      <p>Drive into the future with the BYD Tang EV, featuring bold design and AI-enhanced performance.</p>
+    </div>
+  </section>
+
+  <!-- Car Section 4: Your New Image (BYD Seal SUV, for example) -->
+  <section id="car4">
+    <div class="car">
+      <!-- Replace 'byd-seal-suv.jpg' with your actual image file or hosted image URL -->
+      <img 
+        src="byd-seal-suv.jpg" 
+        alt="BYD Seal SUV" 
+      />
+      <h2>BYD Seal SUV</h2>
+      <p>Introducing the newest member of the BYD family, combining sleek style and AI-driven technology for a truly modern ride.</p>
+    </div>
+  </section>
+
+  <!-- Footer with Car Dealership Link -->
+  <footer>
+    <p>Interested in these amazing cars?</p>
+    <a href="https://www.byd.com/eu/find-store" target="_blank">Visit BYD Store Locator</a>
+  </footer>
+
+  <!-- JavaScript for scroll animations -->
+  <script>
+    // Use Intersection Observer to animate sections as they come into view
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
